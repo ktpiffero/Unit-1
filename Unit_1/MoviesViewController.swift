@@ -54,6 +54,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
@@ -67,7 +68,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         let baseUrl = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
-
+//
         guard let posterUrl = URL(string: baseUrl + posterPath) else {
             return UITableViewCell()
         }
