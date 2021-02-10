@@ -36,8 +36,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             self.movies = dataDictionary["results"] as! [[String:Any]]
             
             self.tableView.reloadData()
-            
-            print(dataDictionary)
 
               // TODO: Get the array of movies
               // TODO: Store the movies in a property to use elsewhere
@@ -68,11 +66,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         let baseUrl = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
-//
-        guard let posterUrl = URL(string: baseUrl + posterPath) else {
-            return UITableViewCell()
-        }
-        cell.posterView.af.setImage(withURL: posterUrl)
+        let posterUrl = URL(string: baseUrl + posterPath)
+        cell.posterView.af.setImage(withURL: posterUrl!)
         return cell
     
     }
